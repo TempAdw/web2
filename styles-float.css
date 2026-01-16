@@ -1,0 +1,92 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  font-family: system-ui, sans-serif;
+
+  display: table;
+  width: 100%;
+  height: 100vh;
+}
+
+.card { border: 1px solid #000; padding: 10px; }
+.site-header, .site-footer { border: 1px solid #000; padding: 10px; }
+
+.site-header { display: table-row; }
+.site-header .brand { display: inline-block; }
+.site-header .ad-top { float: right; margin: 0; }
+.site-header::after{ content:""; display: table; clear: both; }
+
+.site-footer { display: table-row; }
+.lyrics { overflow-wrap: anywhere; line-height: 1.2; }
+
+.layout{
+  display: table-row;
+  height: 100%;
+}
+
+.layout-inner{
+  display: table;
+  width: 100%;
+  height: 100%;
+  border-spacing: 6px;
+  padding: 6px;
+}
+
+.col{
+  display: table-cell;
+  vertical-align: top;
+  height: 100%;
+}
+
+.left  { width: 25%; }
+.center{ width: 50%; }
+.right { width: 25%; }
+
+.col-table{
+  display: table;
+  width: 100%;
+  height: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.row{ display: table-row; }
+.row.top{ height: auto; }
+.row.fill{ height: 100%; }
+
+.row > .card{
+  height: 100%;
+}
+
+.five img{ max-width: 100%; height: auto; display: block; }
+
+@media (max-width: 900px){
+  body{ display: block; height: auto; }
+  .layout{ display: block; height: auto; }
+  .layout-inner{ display: block; height: auto; border-spacing: 0; padding: 6px; }
+  .col{ display: block; width: 100%; height: auto; }
+  .col-table{ height: auto; }
+  .row{ display: block; height: auto; }
+  .row > .card{ height: auto; margin-bottom: 6px; }
+  .site-header .ad-top{ float: none; display: block; margin-top: 6px; }
+}
+
+.site-footer{
+  position: relative;
+}
+.site-footer .lyrics{
+  float: left;
+  width: 75%;
+}
+.site-footer .ad-bottom{
+  float: right;
+  margin: 0;
+  white-space: nowrap;
+}
+.site-footer::after{
+  content: "";
+  display: table;
+  clear: both;
+}
